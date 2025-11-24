@@ -9,7 +9,7 @@ const router = useRouter();
 const tarefa = ref({});
 
 async function carregar() {
-  const { data } = await tarefaService.getTarefas(route.params.id);
+  const { data } = await tarefaService.getTarefa(route.params.id);
   tarefa.value = data;
 }
 
@@ -23,7 +23,7 @@ onMounted(carregar);
 
 <template>
   <div style="padding:20px;">
-    <h2>Editar Tarefa </h2>
+    <h2>Editar Tarefa: {{ tarefa.nome }}</h2>
 
     <form @submit.prevent="salvar">
       <input v-model="tarefa.nome" /><br />
