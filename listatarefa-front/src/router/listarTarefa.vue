@@ -16,9 +16,15 @@ function corNivel(nivel) {
 }
 
 const tarefasFiltradas = computed(() => {
-  return tarefas.value.filter(t => {
-    return (!filtroStatus.value || t.status === filtroStatus.value) &&
-           (!filtroNivel.value || t.nivel === filtroNivel.value);
+  return tarefas.value.filter(tarefa => {
+    
+    const passaStatus =
+      filtroStatus.value === "" || tarefa.status === filtroStatus.value;
+
+    const passaNivel =
+      filtroNivel.value === "" || tarefa.nivel === filtroNivel.value;
+
+    return passaStatus && passaNivel;
   });
 });
 
@@ -42,7 +48,6 @@ async function deletar(id) {
   carregar();
 }
 
-onMounted(carregar);
 </script>
 
 <template>
