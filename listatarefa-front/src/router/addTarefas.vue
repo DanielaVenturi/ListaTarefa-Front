@@ -15,7 +15,12 @@ const tarefa = ref({
 
 async function add() {
   await tarefaService.addTarefa(tarefa.value);
-  router.push("/");
+
+  alert("Tarefa salva com sucesso!");
+
+  setTimeout(() => {
+    router.push("/");
+  }, 1500); 
 }
 </script>
 
@@ -24,7 +29,12 @@ async function add() {
     <h2>Adicionar Tarefa</h2>
 
     <form @submit.prevent="add">
-      <input v-model="tarefa.nome" placeholder="Nome" required /><br />
+
+      <input 
+        v-model="tarefa.nome" 
+        placeholder="Nome"
+        required
+      /><br />
 
       <textarea v-model="tarefa.descricao" placeholder="Descrição"></textarea><br />
 
@@ -39,11 +49,10 @@ async function add() {
       <select v-model="tarefa.status">
         <option value="pendente">Pendente</option>
         <option value="em andamento">Em andamento</option>
-        <option value="concluida">Concluída</option>
+        <option value="concluída">Concluída</option>
       </select><br />
 
       <button type="submit">Salvar</button>
     </form>
   </div>
 </template>
-

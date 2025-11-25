@@ -80,7 +80,7 @@ onMounted(carregar);
 
       <button @click="concluir(t)">Marcar como concluída</button>
       <button @click="editar(t.id)">Editar</button>
-      <button @click="deletar(t.id)" style="color:red;">Deletar</button>
+      <button @click="deletar(t.id)" >Deletar</button>
     </div>
   </div>
 </template>
