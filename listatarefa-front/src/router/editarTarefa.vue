@@ -15,7 +15,11 @@ async function carregar() {
 
 async function salvar() {
   await tarefaService.atualizarTarefa(route.params.id, tarefa.value);
-  router.push("/");
+   alert("Tarefa alterada com sucesso");
+
+  setTimeout(() => {
+    router.push("/");
+  }, 1500); 
 }
 
 onMounted(carregar);

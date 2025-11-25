@@ -48,6 +48,7 @@ async function deletar(id) {
   carregar();
 }
 
+onMounted(carregar);
 </script>
 
 <template>
