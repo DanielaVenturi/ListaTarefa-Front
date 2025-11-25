@@ -70,7 +70,7 @@ onMounted(carregar);
         <option value="alta">Alta</option>
       </select>
     </div>
-
+<p v-if="tarefasFiltradas.length === 0">Você não tem tarefas.</p>
     <div v-for="t in tarefasFiltradas" :key="t.id"
          :style="{
            border: '1px solid #ccc',
