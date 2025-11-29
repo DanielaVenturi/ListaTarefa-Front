@@ -53,7 +53,7 @@ async function add() {
       <select v-model="tarefa.status" class="select">
         <option value="pendente">Pendente</option>
         <option value="em andamento">Em andamento</option>
-        <option value="concluída">Concluída</option>
+        <option value="concluida">Concluída</option>
       </select>
 
       <button type="submit" class="btn-salvar">Salvar</button>
@@ -75,14 +75,12 @@ async function add() {
   color: #333;
 }
 
-/* Form */
 .form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Inputs */
 .input,
 .select,
 .textarea {
@@ -94,24 +92,17 @@ async function add() {
   width: 100%;
 }
 
-.input:focus,
-.select:focus,
-.textarea:focus {
-  border-color: #999;
-  box-shadow: 0 0 5px #ccc;
-}
+
 
 .textarea {
   resize: vertical;
   height: 80px;
 }
 
-/* Botão */
 .btn-salvar {
   padding: 12px;
-  border: 0;
   border-radius: 8px;
-  background: #b3d1ff;
+  background:  #4f46e5;
   cursor: pointer;
   transition: 0.2s;
   font-size: 1rem;
@@ -122,7 +113,6 @@ async function add() {
   background: #96bfff;
 }
 
-/* Responsividade */
 @media (max-width: 600px) {
   .titulo {
     font-size: 1.5rem;
@@ -131,5 +121,11 @@ async function add() {
   .btn-salvar {
     width: 100%;
   }
+   .input,
+.select,
+.textarea {
+  width: 90%;
+ 
+} 
 }
 </style>
